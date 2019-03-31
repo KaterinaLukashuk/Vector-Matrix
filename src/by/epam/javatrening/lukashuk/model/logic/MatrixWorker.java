@@ -3,6 +3,7 @@ package by.epam.javatrening.lukashuk.model.logic;
 import by.epam.javatrening.lukashuk.model.data.Matrix;
 
 public class MatrixWorker {
+
     public static double getMax(Matrix matrix)
     {
         double max = matrix.get(0,0);
