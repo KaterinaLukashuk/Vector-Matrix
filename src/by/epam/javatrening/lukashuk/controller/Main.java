@@ -16,8 +16,7 @@ public class Main {
         {
             vector.add(random.nextDouble());
         }
-        Output.printVector(vector);
-        Output.printVector(vector);
+        Output.print(vector.toString());
         qSort(vector, 0 , vector.length() - 1);
         vector = revers(vector);
         bubbleSort(vector);
