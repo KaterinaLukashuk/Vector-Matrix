@@ -1,10 +1,12 @@
 package by.epam.javatrening.lukashuk.model.data;
 
+import java.util.Arrays;
+
 public class Matrix
 {
-    double [][]array;
-    int columns;
-    int rows;
+    private double [][]array;
+    private int columns;
+    private int rows;
 
     public Matrix() {
         array = new double[0][];
@@ -47,4 +49,17 @@ public class Matrix
         array[k][l] = x;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Matrix{");
+        for (int i = 0; i < columns; i++)
+        {
+            for (int j = 0; j < rows; j++)
+            {
+                sb.append(array[i][j]).append(" ");
+            }
+            sb.append('\n');
+        }
+        return sb.toString();
+    }
 }

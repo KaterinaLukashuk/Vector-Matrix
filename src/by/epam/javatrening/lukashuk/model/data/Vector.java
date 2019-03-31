@@ -3,9 +3,9 @@ package by.epam.javatrening.lukashuk.model.data;
 import java.util.Arrays;
 
 public class Vector {
-    int counter;
-    double [] array;
-    boolean dynamic;
+    private int counter;
+    private double [] array;
+    private boolean dynamic;
 
     public Vector() {
         array = new double[0];
@@ -17,6 +17,16 @@ public class Vector {
         array = new double[size];
         counter = 0;
         dynamic = false;
+    }
+
+    public Vector(Vector vector) {
+        Vector copyOfVector = new Vector();
+        for (int i = 0 ; i < vector.length(); i++)
+        {
+            copyOfVector.array[i] = vector.array[i];
+        }
+        copyOfVector.counter = vector.counter;
+        copyOfVector.dynamic = vector.dynamic;
     }
 
     public double[] getArray() {
@@ -53,5 +63,16 @@ public class Vector {
         double x = array[i];
         array[i] = array[j];
         array[j] = x;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0 ; i < array.length; i++)
+        {
+            stringBuilder.append(array[i]).append(" ");
+        }
+        stringBuilder.append('\n');
+        return  stringBuilder.toString();
     }
 }
